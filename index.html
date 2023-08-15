@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+    
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khuliso Gumula's Website</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Contact Form</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('TK-7m4NPpNHAXwxX4');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function () {
+                        console.log('SUCCESS!');
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <!--===== Navbar Start =====-->
+    <nav class="navbar">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="logo"><a href='/'>Port<span>folio</span></a></div>
+                <div class="links">
+                    <ul class="menu">
+                        <li class="nav-item"><a href="#home" class="nav-link active">Home <span></span></a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About <span></span></a></li>
+                        <li class="nav-item"><a href="#Skills" class="nav-link">Skills <span></span></a></li>
+						<li class="nav-item"><a href="#Majors" class="nav-link">Majors <span></span></a></li>
+                        <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio <span></span></a></li>
+                        <li class="nav-item"><a href="#Experience" class="nav-link">Experience <span></span></a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact <span></span></a></li>
+                    </ul>
+                </div>
+                <div class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--===== Navbar End =====-->
+    <!--===== Home Section Start =====-->
+    <section class="home-section" id="home">
+        <ul class="header-social">
+            <!--===== Header Social =====-->
+            <li><a href="https://www.linkedin.com/in/gumula-khuliso-18851a171/">
+                    <<<svg lns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                        </svg></i>
+                </a></li>
+
+                
+            <li><a href="https://www.github.com/gums-hash"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                        <path
+                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+           
+                    <!-- <i class="fa fa-linkedin" style="font-size:24px"></i> -->
+
+
+        </ul>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="home-text">
+                    <h3>Hello</h3>
+
+                    <h4>I'm, Khuliso Gumula</h4>
+                    
+                    <h4 class="post"><span class="typing-text"></span></h4>
+
+            <p>Khuliso is a young Software Developer, a very dedicated tech-enthusiast and a Graduate from IIE Rosebank College<br>
+		       However i prefer to define myself based on what i can do rather than the qualification i hold. i am very self-discipline person<br>
+		       who is open to opportunities and i am always up for challenges to grow myself.</P>
+		   
+	        <p>I'm Enegertic and passionate aspiring Software Developer,aiming to use my knowledge and skills that i have acquired from System<br>
+		       Development learnership as well as self-study and with my hardwork to satisfy an IT related job or entry-level opportunities at any organization<br>
+              i am confident that i will significantly benefit your team and organization with my technical and leadership skills, coupled with my adaptability<br>
+              and interpersonal abilities I am passionate about technology and love to explore the world of web development/Applications.Feel free to connect with me<br>
+		      and let's create amazing things together!. <br>
+			  
+		      <br>I’m effective verbal and written communication within the team and I can also be a
+              team player and able to play a leadership role within the team. I’m a hardworking and
+              patient person. I have the ability to design, code and deploy scalable, distributed
+              systems. I’m also curious about how systems work and how they fail. I’m eager to learn
+              new technologies and solutions and I love open source coding and collaboration, I love coding.</p>
+						
+                    <a href="" class="" download></a>
+					
+                </div>
+                <div class="home-image">
+                    <div class="img-box">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-hero-shape"></div>
+        <!--===== Hero Shape =====-->
+
+
+    </section>
+    <!--===== Home Section End =====-->
+    <!--===== About Section Start =====-->
+    <section class="about-section section-padding" id="about">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="about-image">
+                    <div class="img-box">
+                        <img src="https://images.idgesg.net/images/article/2019/05/java_binary_code_gears_programming_coding_development_by_bluebay2014_gettyimages-1040871468_2400x1600-100795798-large.3x2.jpg" alt="">
+                        <!-- <div class="about-shape"></div> -->
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="section-title">
+                        <h5 class="sub-title">About</h5>
+                        <h3 class="main-title">Why You Should Hire Me?</h3>
+                        <ul class="line">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <!--===== Section Title =====-->
+					
+                    <p> I'm a Junior Software Developer with a passion for crafting innovative digital solutions. 
+					My journey in the world of technology has led me to become proficient in a wide array of tools 
+					and technologies, allowing me to contribute effectively to both front-end and back-end development. 
+					Here's a glimpse into my skillset and approach:<br>
+					
+					<h4>Front-end :</h4>
+
+                 I wield the power of Android Studio, crafting seamless and engaging experiences on the Android platform.
+                 With Visual Studio and Notepad++, I bring concepts to life, creating applications for various platforms with precision and creativity.
+                 The versatility of NetBeans IDE empowers me to excel in Java-based development projects.
+                 I thrive in the dynamic realm of Angular, building cutting-edge web applications that captivate users.
+                  My proficiency in HTML5, CSS3 and JavaScript enables me to sculpt captivating interfaces and deliver outstanding user interactions<br>
+				  
+				  <h4>Back-end :</h4>
+
+                    Oracle, a robust relational database management system, is my tool of choice for data management.
+                    I leverage the power of local server environments like WampServer and XAMPP coupled with MySQL for seamless web development.
+                    Node.js is my canvas for crafting server-side applications, while languages like Java and C# form the foundation of my back-end arsenal.<br>
+					
+					GitHub is my trusted companion for version control, promoting seamless collaboration and streamlined development.
+                    Sublime Text is where I sculpt code, combining speed and simplicity for maximum productivity.
+					
+					</p>
+                    <div class="about-skills"><br><br><br>
+
+                        <svg xmlns="https://logowik.com/content/uploads/images/android-studio5850.logowik.com.webp" x="0px" y="0px"
+
+
+
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://th.bing.com/th/id/OIP.63rzKiGM6h9ge4E7SixxpgHaH9?pid=ImgDet&rs=1" width="100" height="100"/>
+</svg>
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://img.tuttoandroid.net/wp-content/uploads/2018/09/Android-Sudio-32-logo.png" width="100" height="100"/>
+</svg>
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://theindianwire.com/wp-content/uploads/2018/06/Visual-Studio-Logo-1024x768.jpg" width="100" height="100"/>
+</svg>
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://th.bing.com/th/id/OIP.Xo7mAZ5oUUUfTpI08HTEugHaEU?pid=ImgDet&rs=1" width="100" height="100"/>
+</svg>
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://www.interviewbit.com/blog/wp-content/uploads/2021/11/Apache-NetBeans-768x269.png" width="100" height="100"/>
+</svg>
+
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://th.bing.com/th/id/OIP.hVjXTx3sJmskoWzR9EWXqAHaDe?w=330&h=159&c=7&r=0&o=5&pid=1.7" width="100" height="100"/>
+</svg>
+
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://th.bing.com/th/id/OIP.esoicG9g6FwqMBo7KuZ3WAAAAA?pid=ImgDet&rs=1" width="100" height="100"/>
+</svg>
+
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://logos-download.com/wp-content/uploads/2019/07/Notepad_Logo.png" width="100" height="100"/>
+</svg>
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://download.logo.wine/logo/Node.js/Node.js-Logo.wine.png" width="100" height="100"/>
+</svg>
+
+
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://i1.wp.com/download.zone/wp-content/uploads/2019/07/mysql-logo-532-x-455.jpg?fit=532%2C455&ssl=1" width="100" height="100"/>
+</svg>
+
+
+
+
+	
+                        <!-- <div class="skill-item">
+                            <div class="skill-header">
+                                <h6 class="skill-title">Angular2+</h6>
+                                <div class="skill-percentage">
+                                    <p><span class="counter">64</span>%</p>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="bar-inner">
+                                    <div class="bar progress    -line" data-progress="70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <h6 class="skill-title">ProtgreSQL</h6>
+                                <div class="skill-percentage">
+                                    <p><span class="counter">69</span>%</p>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="bar-inner">
+                                    <div class="bar progress-line" data-progress="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <h6 class="skill-title">UX Design</h6>
+                                <div class="skill-percentage">
+                                    <p><span class="counter">66</span>%</p>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="bar-inner">
+                                    <div class="bar progress-line" data-progress="71%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <h6 class="skill-title">HTML/CSS</h6>
+                                <div class="skill-percentage">
+                                    <p><span class="counter">70</span>%</p>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="bar-inner">
+                                    <div class="bar progress-line" data-progress="80%"></div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!--===== Skill Item =====-->
+                       
+                        <!--===== Skill Item =====-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===== About Section End =====-->
+	 <section class="service-section section-padding" id="Skills">
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-align">
+                    <h5 class="sub-title">Skills</h5>
+                    <h3 class="main-title">My Skills</h3>
+                    <ul class="line">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!--===== Section Title =====-->
+            </div>
+
+
+
+
+            <div class="row">
+                <!--===== Service Item Start =====-->
+                <div class="service-item">
+                    <div class="service-item-inner">
+                        
+                        <h3>Angular</h3>
+                        <p>This is the application design framework and development platform for creating efficient and
+                            sophisticated single-page apps That i used to develop my projects </p>
+                    </div>
+                </div>
+                <!--===== Service Item End =====-->
+                
+                <!--===== Service Item Start =====-->
+                <div class="service-item">
+                    <div class="service-item-inner">
+                        
+                        <h3>Node.Js</h3>
+                        <p>I used Node.js to add, delete and modify in my database also to collect some form of data in
+                            my projects</p>
+                    </div>
+                </div>
+                <!--===== Service Item End =====-->
+                <!--===== Service Item Start =====-->
+                
+                <div class="service-item">
+                    <div class="service-item-inner">
+                       
+                        <h3>HTML5 & CSS3</h3>
+                        <p>HTML elements label pieces of content such as "this is a heading", "this is a paragraph",
+                            "this is a link" and on CSS i used it for styling </p>
+                    </div>
+
+                </div>
+                <div class="service-item">
+                    <div class="service-item-inner">
+                       
+                        <h3>Java</h3>
+                        <p>Java's main strength is its platform independence. Code written in Java can be executed on any platform that has a compatible JVM, which allows developers to build applications that work across different operating systems without modifications. </p>
+                    </div>
+
+                </div>
+                <div class="service-item">
+                    <div class="service-item-inner">
+                       
+                        <h3>Javascript</h3>
+                        <p>JavaScript enables developers to add interactivity to web pages. With JavaScript, you can respond to user actions like clicks, input, and mouse movements, allowing you to create dynamic and engaging user experiences </p>
+                    </div>
+
+                </div>
+<div class="service-item">
+                    <div class="service-item-inner">
+                       
+                        <h3>C#</h3>
+                        <p>C# is used to build a variety of applications, including desktop applications for Windows, web applications using ASP.NET, and cross-platform applications using technologies like Xamarin or .NET Core.</p>
+                    </div>
+
+                </div>
+
+                <div class="service-item">
+                    <div class="service-item-inner">
+                       
+                        <h3>MYSQL</h3>
+                        <p>MySQL serves as a platform for creating, managing, and interacting with databases. It allows you to store, organize, retrieve, and manipulate data in a structured manner </p>
+                    </div>
+
+                </div>
+
+                 <div class="service-item">
+                    <div class="service-item-inner">
+                       
+                        <h3>ORACLE</h3>
+                        <p>Oracle is perhaps best known for its database management systems, including Oracle Database. These DBMSs are used to store, manage, and retrieve data efficiently. Oracle's databases are widely used in enterprises for various application </p>
+                    </div>
+
+                </div>
+                <div class="service-item">
+                    <div class="service-item-inner">
+                       
+                        <h3>PHP</h3>
+                        <p>(Hypertext Preprocessor) is a server-side scripting language that is commonly used for web development. It is embedded within HTML code and executed on a web server to generate dynamic web content. PHP allows developers to create interactive and dynamic web pages by embedding PHP code directly into HTML files. </p>
+                    </div>
+
+                </div>
+                <!--===== Service Item End =====-->
+            </div>
+        </div>
+    </section>
+    <!--===== Services Section Start =====-->
+    <section class="service-section section-padding" id="Majors">
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-align">
+                    <h5 class="sub-title">Majors</h5>
+                    <h3 class="main-title">My Majors</h3>
+                    <ul class="line">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!--===== Section Title =====-->
+            </div>
+
+
+
+
+            <div class="row">
+                <!--===== Service Item Start =====-->
+                <div class="service-item">
+                    <div class="service-item-inner">
+                        
+                        <h3>Web Development</h3>
+                        <p>Building advanced website using JavaScript,PHP,SQL languages and HTML5 the Hypertext Markup Language and CSS the styling Language.<br>
+                           using Platforms such as Notepad ++,Oracle,MySQL and NetBeans IDE.</P>
+                    </div>
+                </div>
+                <!--===== Service Item End =====-->
+                <!--===== Service Item Start =====-->
+                <div class="service-item">
+                    <div class="service-item-inner">
+                        
+                        <h3>Advanced Databases</h3>
+                        <p>in this module we used Structured query Language (SQL).we used SQL for storing and processing information in a relational database<br> 
+		                   a relational databasestores information in table form, with rows and columns representing different data attributes and various realtionships<br>
+		                   between the data values. SQL is a language that oparate databases, it inclueds Database Creation, Database Deletion, fetching Data from rows,<br>
+		                   Modifying and Deleting Data from rows. etc.</p>
+                    </div>
+                </div>
+                <!--===== Service Item End =====-->
+                <!--===== Service Item Start =====-->
+                <div class="service-item">
+                    <div class="service-item-inner">
+                        
+                        <h3>Software Quality and Testing</h3>
+                        <p>in this module we were examining the artifacts and the behavior of the software under test by validation and varifications. Making sure the<br> 
+		                   Software is safe and secure to implement, Making sure the is no errors and risks,making sure that the software functions are working as expected.</p>
+			
+                    </div>
+                </div>
+                <!--===== Service Item End =====-->
+                <!--===== Service Item Start =====-->
+                <div class="service-item">
+                    <div class="service-item-inner">
+    
+                        <h3>Information Security</h3>
+                        	<p>The module was about information protection from different kinds of threats and virus and it talks about Disaster recovery plan</p>
+                    </div>
+                </div>
+                <!--===== Service Item End =====-->
+                <!--===== Service Item Start =====-->
+                <div class="service-item">
+                    <div class="service-item-inner">
+                      
+                        <h3>Applied Programming</h3>
+                       <p> this module is about software developemnt in Cloud Computing Microsoft Azure, using SQL Database, C# programming language and agile method<br>
+		                   it shows the Application of Software development in cloud computing platform,how coe is pushed ,how it connects to the databases and a whole<br>
+			               lot of theories about Software engineering, making practice of Microsoft Azure,C# programming languagr and SQL  Database.</p>
+                    </div>
+                </div>
+                <!--===== Service Item End =====-->
+                <!--===== Service Item Start =====-->
+                <div class="service-item">
+                    <div class="service-item-inner">
+                       
+                        <h3>Open Source Coding</h3>
+                        <p> This module focus on Mobile Applications development using Android software and Java programming Language, we created some Application fitness App <br>
+		                    and Google maps application, using firebase Database</p>
+                    </div>
+                </div>
+                <!--===== Service Item End =====-->
+            </div>
+        </div>
+    </section>
+    <!--===== Services Section End =====-->
+    <!--===== Portfolio Section Start =====-->
+    <section class="portfolio section-padding" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-align">
+                    <h5 class="sub-title">portfolio</h5>
+                    <h3 class="main-title">My Projects</h3>
+                    <ul class="line">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!--===== Section Title =====-->
+            </div>
+            <section id="portfolio" class="s-works target-section">
+		<div class="col-full text-center">
+			<h1>Projects</h1>
+		</div>
+
+		<div class="row narrow section-intro has-bottom-sep">
+			<div class="col-full">
+				<p class="lead">
+					I've worked on personal as well as professional projects. Here are some of personal projects I've kept. 
+					Please visit my GitHub page to view the source code for some of these projects.
+				</p>
+			</div>
+		</div>
+
+		<div class="row masonry-wrap">
+			<div class="masonry">
+				
+
+				<!-- end masonry__brick -->
+				<div class="masonry__brick">
+									<div class="item-folio">
+										<div class="item-folio__thumb">
+											<a href="images/portfolio/gallery/g-carbon.svg" class="thumb-link" title="Novelty"
+												data-size="950x768">
+												<img src="images/portfolio/carbon.svg" srcset="https://th.bing.com/th/id/OIP.CHHGFimN4OBqXEdnRQiTNAHaE7?pid=ImgDet&rs=1"
+													alt="" />
+												<span class="shadow-overlay"></span>
+											</a>
+										</div>
+				
+										<div class="item-folio__text">
+											<h3 class="item-folio__title">Personal Portfolio</h3>
+											<p class="item-folio__cat">Khuliso Gumula's website</p>
+										</div>
+				
+										<a href="#" class="item-folio__project-link">
+											<i class="im im-link"></i>
+										</a>
+				
+										<div class="item-folio__caption">
+											<p> 
+												The personal website portfolio I've created using HTML5, CSS, and JavaScript is an interactive showcase that combines the power of modern web technologies to present my professional journey and accomplishments in a dynamic and engaging manner. Through carefully crafted HTML5 structures, I've organized the content into easily navigable sections, including an "About Me" page that provides insights into my background and aspirations. The integration of CSS styles not only ensures a visually appealing design but also maintains consistency across the site, enhancing user experience. Leveraging JavaScript, I've incorporated interactive elements such as animated transitions, dynamic project previews, and perhaps even a contact form with validation. These enhancements go beyond static presentation, allowing visitors to actively engage with my work. By blending these technologies, my personal website portfolio doesn't just showcase my skills and achievements; it creates an immersive experience that reflects my dedication to innovation and professionalism in the digital landscape. <a href="https://gums-hash.github.io/GumulaKhuliso/" target="_blank">Portfolio</a>
+											</p>
+										</div>
+									</div>
+									<!-- end item-folio -->
+				</div>
+				<!-- end masonry__brick -->
+
+                <!--===== portfolio-item end =====-->
+                <!--===== portfolio-item start =====-->
+                <div class="portfolio-item" data-category="wordpress">
+                    <a href="http://themovieforum.herokuapp.com/">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-img">
+                            <img src="/images/MV5BMzk1YTg0NTMtZmM0YS00YjgxLTljMGQtMTI3MTczYjVjNjVhXkEyXkFqcGdeQXVyMTM2Mzg4MA@@._V1_.jpg" alt="">
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>Movie App</h4>
+                            <div class="icon">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <!--===== portfolio-item end =====-->
+                <!--===== portfolio-item start =====-->
+                <div class="portfolio-item" data-category="photography">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-img">
+                            <img src="/images/portfolio/portfolio-6.jpg" alt="">
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>Smart</h4>
+                            <div class="icon">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--===== portfolio-item end =====-->
+            </div>
+        </div>
+    </section>
+  
+    <section class="pricing section-padding" id="Experience">
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-align">
+                    <h5 class="sub-title">Experience</h5>
+                    <h3 class="main-title">My work experience</h3>
+                    <ul class="line">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <section class="service-section section-padding" id="services">
+                            <div class="container">
+
+                                <div class="w3-twothird">
+
+                                    <div class="w3-container w3-card w3-white w3-margin-bottom">
+                                        
+                                        
+                                        <br>
+                                        <div class="w3-container">
+
+                                           
+
+
+                                            <section class="education" id="education">
+                                                <div class="box-container">
+                                        
+                                                    <div class="box">
+                                                        <div class="year">2021 - 2022</div>
+                                                        <h2>Department of 
+                                                           Agriculture and Rural Development
+                                                           </h2><br>
+                                                        <h4>Asset Management</h4>
+														
+                                <p>Moving assets from office to office storeroom Monitoring movements of assets.</p>
+                                <p>Compile monthly statistics Update inventory list and assets register.</p>
+                                <p>Bar-code all newly acquired assets.</p>
+                                <p>Update assets register according to assets status.</p>
+                                <p>Perform general duties related to assets management including disposal.</p>
+                                <p>Keep and update of all records on the assets register.</p>
+                                                    </div>
+                                        
+
+                                                    <div class="box">
+                                                        <div class="year">2022 - 2022</div>
+                                                        <h2>Innovation Knowledge Worxs</h2><br>
+                                                        <h4>System Development</h4>
+
+                                                        <p>Designed and developed a Single Page Application using Netbean IDE.</p>
+                                                        <p>I worked as System Development at Innovation Knowledge Worxs where i  Have Advanced knowledge of computer software.</p>
+                                                         <p>Produced clean, efficient code based on specifications.</p>
+                                                         <p>Designed and developed a Relational Database using MySQL.</p>
+                                                         <p>Troubleshoot, debug and upgrade .</p>
+                                                         <p>Gather and evaluate user feedback, Writing workbooks and assessment.</p>
+                                                         <p>Familiarity with Microsoft Cloud solutions such as Microsoft365 and Azure.</p>
+                                                        <p>Working knowledge of a range of diagnostic utilities and processes.</p>
+
+                                                            
+                                                    </div>
+                                        
+                                                <div class="box">
+                                                        <div class="year">2022 - Current</div>
+                                                        <h2>Department of Home Affairs
+                                                           </h2><br>
+                                                        <h4>INDEXER</h4>
+														
+                                <p>Physical Records Management (Putting the record on the system).</p>
+                                <p>Preparation of the physical documents.</p>
+                                <p>Scanning the physical documents.</p>
+                                <p>Quality control checking if the information I visible.</p>
+                                <p>Assembling back the physical documents.</p>
+                                <p>ECM- Electronic Captive Management(Capturing the document and feeding the system the information in the documents)</p>
+                                <p>QA (Quality Assurance checking if all the information is correct).</p>
+                                <p>QA2(Checking if all the information is correct then send to the database) if it's not correct it get rejected and the process start again.</p>
+                                
+                                                    </div>
+                                        
+                                        
+                                                </div>
+                                        
+                                            </section>
+                                        </div>
+                                    </div>
+                        </section>
+
+
+                    </ul>
+
+                    
+                </div>
+                <!--===== Section Title =====-->
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="pricing-item">
+
+                </div>
+
+
+            </div>
+
+
+
+            
+        </div>
+    </section>
+    <!--===== Contact Section Start =====-->
+
+    <section class="pricing section-padding" id="Experience">
+        <div class="container">
+            <div class="row">
+
+                
+                <div class="section-title text-align">
+                    <h5 class="sub-title">Contacts</h5>
+                    <h3 class="main-title">My Contacts</h3>
+                    <ul class="line">
+
+                        <section class="service-section section-padding" id="services">
+                            <div class="container">
+                               
+
+                                <section id="contact">
+                                    <div class="contact container">
+                                        <div class="row" </div>
+                                            <div class="contact-info">
+                                                <h3 class="title">Get in touch</h3>
+                                              
+                                                <div class="information-wrap">
+                                                  <div class="information">
+                                                    <div class="contact-icon">
+                                                      <i class="fas fa-map-marker-alt"></i>
+                                                    </div>
+                                                    <p class="info-text">SUNNYSIDE, PRETORIA</p>
+                                                  </div>
+                                  
+                                                  <div class="information">
+                                                    <div class="contact-icon">
+                                                      <i class="fas fa-paper-plane"></i>
+													    
+                                                    </div>
+
+                                                     <a href="mailto:khulisogumula@gmail.com">
+             
+<style>
+  .small-image {
+    width: 30px;
+    height: auto; /* Maintain aspect ratio */
+  }
+</style>
+<img class="small-image" src="https://static.vecteezy.com/system/resources/previews/000/423/188/original/envelope-icon-vector-illustration.jpg" alt="Small Image">
+<a href="mailto:khulisogumula@gmail.com">  
+<p class="info-text">KHULISOGUMULA@gmail</p>                                                </div>
+
+                                               <div class="information">
+                                                    <div class="contact-icon">
+                                                      <i class="fas fa-phone-alt"></i>
+                                                    </div>
+                                                    <a href="https://wa.me/0637697051">
+             
+<style>
+  .small-image {
+    width: 30px;
+    height: auto; /* Maintain aspect ratio */
+  }
+</style>
+<img class="small-image" src="https://th.bing.com/th/id/OIP.X070FVs1DqLDb1dQThVrWwHaHa?pid=ImgDet&rs=1" alt="Small Image">
+<a href="https://wa.me/0637697051">
+ <p class="info-text">WHATSAPP</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            
+                                          
+                                        </div><br>
+                                      
+                                </section>
+
+                        </section>  >
+
+
+                    </ul>
+                </div>
+              
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="pricing-item">
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+  
+    <footer class="footer">
+        <div class="container">
+            <div class="row justify-content-center">
+                <p class="copyright-text">&copy;Copyright Khuliso Gumula 2023</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <div class="lightbox-close">&times;</div>
+            <img src="images/portfolio/portfolio-2.jpg" onclick="nextItem()" class="lightbox-img" alt="">
+            <div class="lightbox-caption">
+                <div class="caption-text"></div>
+                <div class="caption-counter"></div>
+            </div>
+        </div>
+        <div class="lightbox-controls">
+            <div class="prev-item" onclick="prevItem()"><i class="fa fa-angle-left"></i></div>
+            <div class="next-item" onclick="nextItem()"><i class="fa fa-angle-right"></i></div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+
+    <script>
+    
+        var type = new Typed('.typing-text',{
+            strings : [ 'Junior Software Developer','Front end Developer','Back end Developer' ],
+            typeSpeed: 110,
+            loop:true
+
+            
+        });
+        
+    
+        let themeColor = document.querySelectorAll('.theme-toggler span');
+        themeColor.forEach(color => color.addEventListener('click', () =>{
+            let background = color.style.background;
+            document.querySelector('body').style.background = background;
+        }));
+    
+    </script>
+
+
+    <script src="js/main.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
